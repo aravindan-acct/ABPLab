@@ -198,7 +198,7 @@
                 "autoUpgradeMinorVersion": true,
                 "settings": {
                     "fileUris": [
-                        ""
+                        "https://raw.githubusercontent.com/aravindan-acct/ABPLab/main/scripts/customScript2.sh"
                     ]
                 },
                 "protectedSettings": {
