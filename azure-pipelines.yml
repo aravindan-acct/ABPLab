@@ -21,4 +21,4 @@ steps:
     templateLocation: 'URL of the file'
     csmFileLink: 'https://raw.githubusercontent.com/aravindan-acct/ABPLab/main/azuredeploy.json'
     csmParametersFileLink: 'https://raw.githubusercontent.com/aravindan-acct/ABPLab/main/azuredeploy.parameters.json'
-    deploymentMode: 'Complete'
+    deploymentMode: 'Incremental'
