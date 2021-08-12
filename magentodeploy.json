@@ -17,7 +17,7 @@
         "servernic": "[concat(variables('servername'),'-NetworkInterface')]",
         "serverpublicip": "[concat(variables('servername'), '-PublicIP')]",
         "serverpwd": "[parameters('serverPassword')]",
-        "serverstorage": "[toLower(concat(variables('servername'),'storage'))]"
+        "serverstorage": "[toLower(concat(variables('servername'),'cudastorage'))]"
     },
     "resources": [
 
