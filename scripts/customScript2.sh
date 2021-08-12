@@ -46,14 +46,14 @@ sudo systemctl restart apache2
 
 # MySQL Server
 
-sudo apt install -y mysql-server
+sudo apt install -y mariadb-server
 
-db_user = "labuser"
-db_password = "P@ssw0rd@123"
-db_name = "magento"
+$db_user = "labuser"
+$db_password = "P@ssw0rd@123"
+$db_name = "magento"
 
 # DB existance check
-db_exists=$(mysql -u $db_user -p $db_password -e "SHOW DATABASES LIKE '"$db_name"';" | grep "$db_name" > /dev/null; echo "$?")
+$db_exists=$(mysql -u $db_user -p $db_password -e "SHOW DATABASES LIKE '"$db_name"';" | grep "$db_name" > /dev/null; echo "$?")
 if [ $db_exists -eq 0 ];then
     echo "A database with the name $db_name already exists"
     exit
@@ -73,3 +73,5 @@ mysql -u $db_user -p$db_password -e "exit;"
 # Installing composer
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 sudo php composer-setup.php --install-dir=/usr/bin/ --filename=composer
+
+
