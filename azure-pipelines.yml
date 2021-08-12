@@ -22,3 +22,4 @@ steps:
     csmFileLink: 'https://raw.githubusercontent.com/aravindan-acct/ABPLab/main/magentodeploy.json'
     csmParametersFileLink: 'https://raw.githubusercontent.com/aravindan-acct/ABPLab/main/magentodeploy.parameters.json'
     deploymentMode: 'Incremental'
+    deploymentName: 'cudaabpdeployment'
