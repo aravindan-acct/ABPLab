@@ -6,6 +6,9 @@ sudo apt install -y apache2
 sudo systemctl start apache2
 sudo systemctl enable apache2
 
+sudo touch magento.conf
+sudo mv magento.conf /etc/apache2/sites-available/magento.conf
+
 # Apache virtual host
 {
     sudo cat > /etc/apache2/sites-available/magento.conf <<EOF
@@ -75,3 +78,31 @@ php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 sudo php composer-setup.php --install-dir=/usr/bin/ --filename=composer
 
 
+: << 'END'
+{
+            "name": "[concat(variables('servername'), '/customScript1')]",
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "apiVersion": "2019-07-01",
+            "location": "[resourceGroup().location]",
+            "tags": {
+                "displayName": "customScript1 for Magento VM"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Compute/virtualMachines', variables('servername'))]"
+            ],
+            "properties": {
+                "publisher": "Microsoft.Azure.Extensions",
+                "type": "CustomScript",
+                "typeHandlerVersion": "2.1",
+                "autoUpgradeMinorVersion": true,
+                "settings": {
+                    "fileUris": [
+                        "https://raw.githubusercontent.com/aravindan-acct/ABPLab/main/scripts/customScript2.sh"
+                    ]
+                },
+                "protectedSettings": {
+                    "commandToExecute": "nohup bash customScript2.sh"
+                }
+            }
+        }
+END
