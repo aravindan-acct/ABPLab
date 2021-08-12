@@ -19,6 +19,6 @@ steps:
     resourceGroupName: 'arademoabp'
     location: 'South Central US'
     templateLocation: 'URL of the file'
-    csmFileLink: 'https://raw.githubusercontent.com/aravindan-acct/ABPLab/main/azuredeploy.json'
-    csmParametersFileLink: 'https://raw.githubusercontent.com/aravindan-acct/ABPLab/main/azuredeploy.parameters.json'
+    csmFileLink: 'https://raw.githubusercontent.com/aravindan-acct/ABPLab/main/magentodeploy.json'
+    csmParametersFileLink: 'https://raw.githubusercontent.com/aravindan-acct/ABPLab/main/magentodeploy.parameters.json'
     deploymentMode: 'Incremental'
