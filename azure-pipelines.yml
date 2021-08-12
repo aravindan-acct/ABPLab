@@ -10,7 +10,6 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Resource Group'
@@ -22,4 +21,4 @@ steps:
     templateLocation: 'URL of the file'
     csmFileLink: 'https://raw.githubusercontent.com/aravindan-acct/ABPLab/main/azuredeploy.json'
     csmParametersFileLink: 'https://raw.githubusercontent.com/aravindan-acct/ABPLab/main/azuredeploy.parameters.json'
-    deploymentMode: 'Incremental'
+    deploymentMode: 'Complete'
