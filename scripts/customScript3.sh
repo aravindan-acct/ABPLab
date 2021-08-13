@@ -4,6 +4,8 @@
 # install Apache2
 sudo apt-get -y update
 sudo apt install -y apache2
+
+sudo apt install -y unzip
 sudo systemctl start apache2
 sudo systemctl enable apache2
 
@@ -86,3 +88,4 @@ php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 sudo php composer-setup.php --install-dir=/usr/bin/ --filename=composer
 
 echo "LAMP and  Composer Installed. Exiting."
+# edit apache2.conf file to allow override all

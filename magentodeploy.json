@@ -212,11 +212,11 @@
                 "autoUpgradeMinorVersion": true,
                 "settings": {
                     "fileUris": [
-                        "https://raw.githubusercontent.com/aravindan-acct/ABPLab/main/scripts/customScript2.sh"
+                        "https://raw.githubusercontent.com/aravindan-acct/ABPLab/main/scripts/customScript3.sh"
                     ]
                 },
                 "protectedSettings": {
-                    "commandToExecute": "nohup bash customScript2.sh"
+                    "commandToExecute": "nohup bash customScript3.sh"
                 }
             }
         }
