@@ -43,12 +43,12 @@ sudo systemctl restart apache2
 
 sudo apt-get -y update
 sudo apt -y install software-properties-common
-#sudo add-apt-repository -y ppa:ondrej/php
-#sudo apt-get -y update
+sudo add-apt-repository -y ppa:ondrej/php
+sudo apt-get -y update
 
 #PHP and dependencies
-sudo apt -y install php7.2
-sudo apt-get install -y php7.2-{bcmath,bz2,intl,gd,mbstring,mysql,zip,common,dom,curl,soap}
+sudo apt -y install php7.4
+sudo apt-get install -y php7.4-{bcmath,bz2,intl,gd,mbstring,mysql,zip,common,dom,curl,soap}
 
 # Modify the php.ini file
 
@@ -56,6 +56,19 @@ sudo apt-get install -y php7.2-{bcmath,bz2,intl,gd,mbstring,mysql,zip,common,dom
 sudo systemctl restart apache2
 
 # MySQL Server
+sudo  apt-get -y install php7.4-mysql git
+sudo apt install -y wget
+wget https://downloads.mariadb.com/MariaDB/mariadb_repo_setup
+echo "fc84b8954141ed3c59ac7a1adfc8051c93171bae7ba34d7f9aeecd3b148f1527 mariadb_repo_setup" \
+    | sha256sum -c -
+chmod +x mariadb_repo_setup
+sudo ./mariadb_repo_setup \
+   --mariadb-server-version="mariadb-10.2"
+
+export PASSWORD=TiUtpgDKlbVJpXpaADrTiSfhkphDznym
+export DEBIAN_FRONTEND="noninteractive"
+sudo debconf-set-selections <<< "mariadb-server mysql-server/root_password password $PASSWORD"
+sudo debconf-set-selections <<< "mariadb-server mysql-server/root_password_again password $PASSWORD" 
 
 sudo apt install -y mariadb-server
 
